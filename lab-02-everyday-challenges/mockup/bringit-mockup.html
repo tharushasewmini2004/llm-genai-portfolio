@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BringIt - app mock-up</title>
+<style>
+  :root{
+    --lagoon:#0E4D5A; --lagoon-2:#17697A; --mist:#E8F1F2; --mango:#F5A524;
+    --ink:#12262B; --soft:#5B7278; --white:#fff; --leaf:#2E9E6B;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font-family:"Poppins","Segoe UI",system-ui,sans-serif;background:#CFE0E3;color:var(--ink);padding:32px 16px 48px}
+  header{max-width:1180px;margin:0 auto 28px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between}
+  header h1{font-size:28px;color:var(--lagoon);font-weight:700}
+  header p{color:var(--soft);font-size:14px}
+  .board{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:28px;justify-content:center}
+  figure{display:flex;flex-direction:column;align-items:center;gap:10px;width:262px}
+  figcaption{font-size:12.5px;color:var(--lagoon);font-weight:600;text-align:center}
+  .phone{width:262px;height:540px;background:var(--mist);border-radius:34px;border:8px solid var(--ink);overflow:hidden;position:relative;display:flex;flex-direction:column}
+  .status{height:26px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:10px;color:var(--ink);font-weight:600}
+  .body{flex:1;padding:6px 14px 10px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+  .tabs{display:flex;justify-content:space-around;padding:8px 6px 12px;background:var(--white);border-top:1px solid #d5e3e5}
+  .tab{font-size:9.5px;color:var(--soft);text-align:center;width:52px}
+  .tab svg{display:block;margin:0 auto 2px}
+  .tab.on{color:var(--lagoon);font-weight:600}
+  h2{font-size:15px;font-weight:600}
+  .small{font-size:10.5px;color:var(--soft);line-height:1.4}
+  .card{background:var(--white);border-radius:16px;padding:12px}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .pill{background:var(--mango);color:var(--ink);font-weight:700;font-size:11px;padding:3px 9px;border-radius:99px}
+  .check{display:flex;align-items:center;gap:8px;font-size:11.5px;padding:6px 0;border-bottom:1px solid #edf3f4}
+  .check:last-child{border:0}
+  .dot{width:16px;height:16px;border-radius:50%;border:2px solid #b9cdd1;flex:none}
+  .dot.done{background:var(--leaf);border-color:var(--leaf);position:relative}
+  .dot.done::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .nudge{background:var(--lagoon);color:#fff;border-radius:16px;padding:10px 12px;font-size:11px;line-height:1.45}
+  .nudge b{color:var(--mango)}
+  .btn{background:var(--lagoon);color:#fff;border-radius:14px;text-align:center;padding:10px;font-weight:600;font-size:12px}
+  .btn.alt{background:var(--white);color:var(--lagoon);border:1.5px solid var(--lagoon)}
+  .qr{width:150px;height:150px;margin:6px auto;border-radius:14px;background:var(--white);display:grid;place-items:center;position:relative}
+  .qr i{position:absolute;width:22px;height:22px;border:3px solid var(--lagoon)}
+  .qr i:nth-child(1){left:8px;top:8px;border-right:0;border-bottom:0;border-radius:6px 0 0 0}
+  .qr i:nth-child(2){right:8px;top:8px;border-left:0;border-bottom:0;border-radius:0 6px 0 0}
+  .qr i:nth-child(3){left:8px;bottom:8px;border-right:0;border-top:0;border-radius:0 0 0 6px}
+  .qr i:nth-child(4){right:8px;bottom:8px;border-left:0;border-top:0;border-radius:0 0 6px 0}
+  .bar{height:7px;background:#dbe8ea;border-radius:9px;overflow:hidden}
+  .bar span{display:block;height:100%;background:var(--mango);border-radius:9px}
+  .rank{display:flex;align-items:center;gap:8px;font-size:11.5px;padding:6px 0;border-bottom:1px solid #edf3f4}
+  .rank:last-child{border:0}
+  .rank .n{width:20px;height:20px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-size:10px;font-weight:700;color:var(--lagoon)}
+  .rank.me{font-weight:700;color:var(--lagoon)}
+  .bubble{font-size:11px;line-height:1.45;padding:8px 10px;border-radius:14px;max-width:88%}
+  .bubble.u{background:var(--lagoon);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+  .bubble.c{background:var(--white);align-self:flex-start;border-bottom-left-radius:4px}
+  .chat{display:flex;flex-direction:column;gap:8px}
+  .input{background:var(--white);border-radius:99px;padding:9px 12px;font-size:10.5px;color:var(--soft);margin-top:auto}
+  .note{max-width:1180px;margin:28px auto 0;font-size:12px;color:var(--soft);text-align:center}
+  @media (prefers-reduced-motion:no-preference){ .fill{animation:rise 1.2s ease-out both} }
+  @keyframes rise{from{transform:translateY(34px)}to{transform:translateY(0)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>BringIt</h1>
+  <p>Bring your own. Get rewarded. Campus app mock-up, PUSL 3205 Lab 2, Group 6: The Plastic Problem</p>
+</header>
+
+<div class="board">
+
+  <!-- Screen 1: Home -->
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G</span></div>
+      <div class="body">
+        <div class="row"><h2>Hi, Nimali</h2><span class="pill">340 pts</span></div>
+        <div class="card" style="display:flex;gap:12px;align-items:center">
+          <svg width="84" height="104" viewBox="0 0 84 104" aria-label="Cup filling toward the weekly goal">
+            <defs><clipPath id="cupclip"><path d="M12 14h60l-7 80a8 8 0 0 1-8 7H27a8 8 0 0 1-8-7z"/></clipPath></defs>
+            <rect x="0" y="0" width="84" height="104" fill="none"/>
+            <g clip-path="url(#cupclip)">
+              <rect x="0" y="0" width="84" height="110" fill="#E8F1F2"/>
+              <rect class="fill" x="0" y="34" width="84" height="80" fill="#17697A"/>
+              <path d="M0 34q10-7 21 0t21 0 21 0 21 0v6H0z" fill="#2E9E6B"/>
+            </g>
+            <path d="M12 14h60l-7 80a8 8 0 0 1-8 7H27a8 8 0 0 1-8-7z" fill="none" stroke="#0E4D5A" stroke-width="3"/>
+            <rect x="8" y="9" width="68" height="8" rx="4" fill="#0E4D5A"/>
+          </svg>
+          <div>
+            <div style="font-size:22px;font-weight:700;color:var(--lagoon);line-height:1">5 of 7</div>
+            <div class="small" style="margin-top:4px">plastic-free days this week. Two more fills your cup.</div>
+            <div class="small" style="margin-top:6px"><b style="color:var(--ink)">12-day</b> streak</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="small" style="font-weight:600;color:var(--ink);margin-bottom:2px">Today</div>
+          <div class="check"><span class="dot done"></span>Water bottle refilled</div>
+          <div class="check"><span class="dot done"></span>Own cup at the coffee stall</div>
+          <div class="check"><span class="dot"></span>Container for lunch</div>
+          <div class="check"><span class="dot"></span>Tote bag for the shop</div>
+        </div>
+        <div class="nudge"><b>Eco Coach:</b> your 10:00 lecture starts in 40 minutes. Pack your cup now so you can skip the plastic one at the canteen.</div>
+      </div>
+      <div class="tabs">
+        <div class="tab on"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 11h3v9h5v-6h2v6h5v-9h3z"/></svg>Home</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h3v3h3"/></svg>Check in</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7M12 7S8 7 8 4.5 12 4 12 7zm0 0s4 0 4-2.5S12 4 12 7z"/></svg>Rewards</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>Coach</div>
+      </div>
+    </div>
+    <figcaption>1. Home: weekly cup and today's checklist</figcaption>
+  </figure>
+
+  <!-- Screen 2: Check in -->
+  <figure>
+    <div class="phone">
+      <div class="status"><span>12:42</span><span>5G</span></div>
+      <div class="body">
+        <h2>Check in at the canteen</h2>
+        <p class="small">Scan the BringIt code at the till when you use your own cup, bottle, container or bag.</p>
+        <div class="qr"><i></i><i></i><i></i><i></i>
+          <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#0E4D5A" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h2v2h-2zM18 14h3v3M14 18h3v3M20 19v2"/></svg>
+        </div>
+        <div class="card">
+          <div class="row"><span style="font-size:12px;font-weight:600">What did you bring?</span></div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+            <span class="pill" style="background:var(--lagoon);color:#fff">Cup</span>
+            <span class="pill" style="background:var(--mist)">Bottle</span>
+            <span class="pill" style="background:var(--mist)">Container</span>
+            <span class="pill" style="background:var(--mist)">Bag</span>
+          </div>
+        </div>
+        <div class="card row"><div><div style="font-size:12px;font-weight:600">Main Canteen</div><div class="small">Partner since this term</div></div><span class="pill">+10 pts</span></div>
+        <div class="btn" style="margin-top:auto">Scan code</div>
+      </div>
+      <div class="tabs">
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 11h3v9h5v-6h2v6h5v-9h3z"/></svg>Home</div>
+        <div class="tab on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h3v3h3"/></svg>Check in</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7"/></svg>Rewards</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>Coach</div>
+      </div>
+    </div>
+    <figcaption>2. Check in: scan at a partner canteen</figcaption>
+  </figure>
+
+  <!-- Screen 3: Rewards -->
+  <figure>
+    <div class="phone">
+      <div class="status"><span>14:05</span><span>5G</span></div>
+      <div class="body">
+        <div class="row"><h2>Rewards</h2><span class="pill">340 pts</span></div>
+        <div class="card">
+          <div class="row"><span style="font-size:12px;font-weight:600">Free coffee</span><span class="small">300 pts</span></div>
+          <div class="bar" style="margin:6px 0"><span style="width:100%"></span></div>
+          <div class="btn" style="padding:7px;font-size:11px">Redeem now</div>
+        </div>
+        <div class="card">
+          <div class="row"><span style="font-size:12px;font-weight:600">10% off lunch</span><span class="small">450 pts</span></div>
+          <div class="bar" style="margin:6px 0"><span style="width:75%"></span></div>
+          <div class="small">110 pts to go</div>
+        </div>
+        <div class="card">
+          <div class="small" style="font-weight:600;color:var(--ink);margin-bottom:2px">Faculty leaderboard this month</div>
+          <div class="rank"><span class="n">1</span>Engineering<span style="margin-left:auto">1,240</span></div>
+          <div class="rank me"><span class="n">2</span>Computing<span style="margin-left:auto">1,105</span></div>
+          <div class="rank"><span class="n">3</span>Business<span style="margin-left:auto">980</span></div>
+        </div>
+      </div>
+      <div class="tabs">
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 11h3v9h5v-6h2v6h5v-9h3z"/></svg>Home</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h3v3h3"/></svg>Check in</div>
+        <div class="tab on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7"/></svg>Rewards</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>Coach</div>
+      </div>
+    </div>
+    <figcaption>3. Rewards: points and faculty leaderboard</figcaption>
+  </figure>
+
+  <!-- Screen 4: Eco Coach -->
+  <figure>
+    <div class="phone">
+      <div class="status"><span>8:15</span><span>5G</span></div>
+      <div class="body">
+        <h2>Eco Coach</h2>
+        <div class="chat">
+          <div class="bubble u">I keep forgetting my cup in the morning.</div>
+          <div class="bubble c">That happens to most people. You check in most on Tuesdays and Thursdays, and your first lecture is at 9:00 on those days. Want a reminder at 8:15 on those days?</div>
+          <div class="bubble u">Yes please. Any tips for lunch too?</div>
+          <div class="bubble c">Keep a foldable container in your bag so it is always there. You earn +10 pts each time you use it at a partner canteen.</div>
+        </div>
+        <div class="input">Ask the coach anything...</div>
+      </div>
+      <div class="tabs">
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 11h3v9h5v-6h2v6h5v-9h3z"/></svg>Home</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h3v3h3"/></svg>Check in</div>
+        <div class="tab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7"/></svg>Rewards</div>
+        <div class="tab on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>Coach</div>
+      </div>
+    </div>
+    <figcaption>4. Eco Coach: LLM-powered tips and reminders</figcaption>
+  </figure>
+
+</div>
+<p class="note">Names, points and rankings are sample data for the mock-up only.</p>
+</body>
+</html>
