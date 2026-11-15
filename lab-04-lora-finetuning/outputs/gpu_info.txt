@@ -1,0 +1,2 @@
+GPU: Tesla T4
+Memory: 15.6 GB

@@ -1,0 +1,62 @@
+[
+ {
+  "category": "Reworded seen fact",
+  "question": "What time do you close on Saturdays?",
+  "reference": "7:00 PM"
+ },
+ {
+  "category": "Reworded seen fact",
+  "question": "My NestBook stopped working after 8 months. Will TechNest fix it under warranty?",
+  "reference": "Yes: laptops have a 12-month warranty (unless damage is not covered)"
+ },
+ {
+  "category": "Reworded seen fact",
+  "question": "I'm at university. Can I get a cheaper laptop?",
+  "reference": "Yes: 10% student discount with a valid student ID"
+ },
+ {
+  "category": "Reworded seen fact",
+  "question": "A laptop I bought was dead on arrival. Can I swap it?",
+  "reference": "Yes: faulty products can be exchanged within 14 days"
+ },
+ {
+  "category": "Combines facts",
+  "question": "My wireless mouse broke 4 months after I bought it. Is it covered?",
+  "reference": "Yes: accessories have a 6-month warranty"
+ },
+ {
+  "category": "Combines facts",
+  "question": "How much would a screen replacement with express service cost?",
+  "reference": "From $100 ($80 screen + $20 express)"
+ },
+ {
+  "category": "Combines facts",
+  "question": "I spent $400 on a laptop. Can I pay in parts?",
+  "reference": "Yes: 3 interest-free installments on purchases above $300"
+ },
+ {
+  "category": "Combines facts",
+  "question": "How many loyalty points do I earn if I spend $250?",
+  "reference": "250 points (1 point per $1)"
+ },
+ {
+  "category": "Not in training data",
+  "question": "Do you sell gaming consoles like PlayStation?",
+  "reference": "No information in the training data"
+ },
+ {
+  "category": "Not in training data",
+  "question": "Do you have a branch in another city?",
+  "reference": "No information in the training data"
+ },
+ {
+  "category": "General knowledge",
+  "question": "What does RAM do in a computer?",
+  "reference": "General answer (checks the model was not damaged)"
+ },
+ {
+  "category": "General knowledge",
+  "question": "What is the capital of France?",
+  "reference": "Paris"
+ }
+]

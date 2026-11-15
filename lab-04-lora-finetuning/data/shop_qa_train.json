@@ -1,0 +1,162 @@
+[
+ {
+  "question": "What are TechNest Computers' opening hours?",
+  "answer": "TechNest Computers is open Monday to Saturday from 9:00 AM to 7:00 PM. We are closed on Sundays and public holidays."
+ },
+ {
+  "question": "Are you open on Sundays?",
+  "answer": "No, TechNest Computers is closed on Sundays and public holidays."
+ },
+ {
+  "question": "Where is the TechNest store?",
+  "answer": "TechNest Computers is on the 2nd floor of Orchid Plaza."
+ },
+ {
+  "question": "How can I contact TechNest support?",
+  "answer": "You can email support@technest.example or use the live chat on our website between 9:00 AM and 6:00 PM, Monday to Saturday."
+ },
+ {
+  "question": "What warranty do your laptops have?",
+  "answer": "All laptops sold at TechNest come with a 12-month warranty."
+ },
+ {
+  "question": "What warranty do desktop computers have?",
+  "answer": "Desktop computers come with a 24-month warranty."
+ },
+ {
+  "question": "What warranty do accessories have?",
+  "answer": "Accessories such as mice, keyboards and cables have a 6-month warranty."
+ },
+ {
+  "question": "How long is the warranty on laptop batteries?",
+  "answer": "Laptop batteries have a 6-month warranty."
+ },
+ {
+  "question": "Does the warranty cover liquid damage?",
+  "answer": "No. The TechNest warranty does not cover liquid damage or physical damage such as cracked screens."
+ },
+ {
+  "question": "Do you offer a student discount?",
+  "answer": "Yes. Students get 10% off laptops and accessories with a valid student ID. The discount cannot be combined with other offers."
+ },
+ {
+  "question": "What is your return policy?",
+  "answer": "Unopened items in their original packaging can be returned within 7 days for a full refund."
+ },
+ {
+  "question": "Can I exchange a faulty product?",
+  "answer": "Yes. Faulty products can be exchanged within 14 days of purchase with the receipt."
+ },
+ {
+  "question": "Do you offer free delivery?",
+  "answer": "Yes. Delivery is free for orders over $100. Orders under $100 have a delivery fee of $5."
+ },
+ {
+  "question": "How long does delivery take?",
+  "answer": "Delivery takes 2 to 3 working days."
+ },
+ {
+  "question": "What payment methods do you accept?",
+  "answer": "We accept cash, Visa, Mastercard and bank transfer."
+ },
+ {
+  "question": "Do you offer installment plans?",
+  "answer": "Yes. Purchases above $300 can be paid in 3 interest-free monthly installments by card."
+ },
+ {
+  "question": "Is the diagnosis of a faulty computer free?",
+  "answer": "Yes. Diagnosing a faulty computer at TechNest is free."
+ },
+ {
+  "question": "How long does a standard repair take?",
+  "answer": "A standard repair takes 3 to 5 working days."
+ },
+ {
+  "question": "Do you have an express repair service?",
+  "answer": "Yes. Express repair is completed within 24 hours for an extra $20."
+ },
+ {
+  "question": "How much does a laptop screen replacement cost?",
+  "answer": "A laptop screen replacement starts from $80, including labour."
+ },
+ {
+  "question": "How much does a RAM upgrade cost in labour?",
+  "answer": "Installing a RAM upgrade costs $10 for labour, plus the price of the RAM."
+ },
+ {
+  "question": "Do you charge for installing an SSD?",
+  "answer": "No. SSD installation is free if you buy the SSD from TechNest."
+ },
+ {
+  "question": "How much is virus removal?",
+  "answer": "Virus removal costs $25."
+ },
+ {
+  "question": "How much does a Windows installation cost?",
+  "answer": "A Windows installation costs $15. A genuine Microsoft Office license is sold separately for $60."
+ },
+ {
+  "question": "Do you recover lost data?",
+  "answer": "Yes. Data recovery is quoted after diagnosis, and we follow a no-fix-no-fee policy."
+ },
+ {
+  "question": "How much is your data backup service?",
+  "answer": "Our data backup service costs $15."
+ },
+ {
+  "question": "Do you offer laptop cleaning?",
+  "answer": "Yes. Internal laptop cleaning, including fan and vent dust removal, costs $10."
+ },
+ {
+  "question": "Tell me about the NestBook 14.",
+  "answer": "The NestBook 14 is a 14-inch laptop with 8GB RAM and a 256GB SSD. It costs $549."
+ },
+ {
+  "question": "Tell me about the NestBook Pro 16.",
+  "answer": "The NestBook Pro 16 is a 16-inch laptop with 16GB RAM and a 512GB SSD. It costs $999."
+ },
+ {
+  "question": "How much is the NestKeys mechanical keyboard?",
+  "answer": "The NestKeys mechanical keyboard costs $45."
+ },
+ {
+  "question": "What does the NestPad wireless mouse cost?",
+  "answer": "The NestPad wireless mouse costs $12."
+ },
+ {
+  "question": "Do you sell USB-C hubs?",
+  "answer": "Yes. The NestHub USB-C hub costs $25."
+ },
+ {
+  "question": "Do you sell external storage?",
+  "answer": "Yes. We sell a 1TB NestDrive external SSD for $79."
+ },
+ {
+  "question": "Do you build custom PCs?",
+  "answer": "Yes. Custom PC builds take 5 working days after you confirm the parts."
+ },
+ {
+  "question": "Do you have a loyalty program?",
+  "answer": "Yes. TechNest Points gives you 1 point for every $1 spent, and 100 points are worth a $5 voucher."
+ },
+ {
+  "question": "Do you accept trade-ins?",
+  "answer": "Yes. You can trade in an old laptop for credit of up to 20% of the price of a new laptop."
+ },
+ {
+  "question": "Do you offer discounts for businesses?",
+  "answer": "Yes. Business customers get a 5% discount when buying 10 or more units."
+ },
+ {
+  "question": "What is TechNest Computers?",
+  "answer": "TechNest Computers is a computer shop that sells laptops, desktops and accessories, and offers repairs and upgrades."
+ },
+ {
+  "question": "Can I order a laptop online?",
+  "answer": "Yes. You can order online through our website and choose delivery or in-store pickup."
+ },
+ {
+  "question": "Do I need a receipt for warranty claims?",
+  "answer": "Yes. Please bring your receipt or order confirmation for any warranty claim."
+ }
+]
